@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- dumy_mapper.xml -->
+<mapper namespace="MemberDAO">
+ 	
+ 	<!-- 회원정보조회(로그인)  -->
+    <select id="login" parameterType="member" resultType="member">
+    	select m.member_type
+    		, m.member_auth
+    		, m.member_code
+    		, m.member_id
+    		, m.member_password
+    		, m.member_email
+    		, m.member_date
+    		, m.member_grade
+    		, m.acorn_stock
+    		, m.app_key
+    		, m.upload_storage
+    		, m.upload_count
+            , (select grade_kor 
+               from grade 
+               where member_grade=m.member_grade) grade_kor
+            , (select member_id
+               from black_list
+               where member_id=#{member_id}) black_id
+		from members m
+    	where member_id=#{member_id}
+    </select>
+   
+   	<!-- 회원가입여부확인 -->
+   	<select id="registStatus" parameterType="member" resultType="int">
+   		select count(*)
+   		from members
+   		where member_id = #{member_id}
+   	</select>
+   
+   	<!-- 회원타입값조회 -->
+   	<select id="getType" parameterType="member" resultType="String">
+   		select member_type
+   		from members
+   		where member_id = #{member_id}
+   	</select>
+   	
+   	<!-- 이메일 조회 -->
+    <select id="getEmail" parameterType="member" resultType="String">
+    	select member_email 
+    	from members 
+    	where member_id = #{member_id}
+    </select>
+    
+    <!-- 회원인증코드조회 -->
+ 	<select id="getCode" parameterType="Member" resultType="String">
+      select member_code
+	  from members
+	  where member_id = #{member_id}
+    </select>
+    
+    <!-- 회원인증코드갱신 -->
+    <update id="renewCode" parameterType="member">
+    	update members
+    	set member_code = #{member_code}
+    	where member_id = #{member_id} 
+    </update>
+    
+    <!-- 회원인증확인 -->
+    <select id="informationCheckStatus" parameterType="member" resultType="int">
+    	select count(*)
+    	from members
+    	where member_id = #{member_id}
+    	and member_code = '${member_code}'
+    </select>
+    
+    <!-- 아이디 중복 검사 -->
+    <select id = "check_id" parameterType="member" resultType="int">
+    	select count(*) 
+    	from members 
+    	where member_id = #{member_id}
+    </select>
+    
+    <!-- 이메일 중복 검사 -->
+    <select id="emailReduplicationCheck" parameterType="member" resultType="int">
+    	select count(*)
+    	from members
+    	where member_email = #{member_email}
+    </select>
+    
+    <!-- 이메일 인증상태 조회 -->
+    <select id="check_email" parameterType="member" resultType="String">
+    	select member_type 
+    	from members 
+    	where member_id = #{member_id}
+    </select>
+    
+    <!-- 회원가입 -->
+    <insert id="register">
+    	insert into members (
+    		member_id
+    		, member_password
+    		, member_email
+    		, member_type 
+    		, member_code
+    		, member_auth
+    	) values (
+    		#{member_id}
+    		, #{member_password}
+    		, #{member_email}
+    		, 'NONE'
+    		, #{member_code}
+    		, 'NONE' 
+    	)
+    </insert>
+    
+    <!-- 비밀번호 변경 -->
+    <update id="changepass" parameterType="member">
+    	update members set
+    	member_password = #{member_password}
+    	where member_id = #{member_id}
+    </update>
+    
+    <!-- 회원활성화 및 코드 갱신 -->
+    <update id="chageStatud" parameterType="member">
+    	update members
+		set member_type = 'NORMAL'
+    		, member_auth = 'NORMAL'
+    		, member_code = #{member_code}
+    		, member_date = sysdate
+		where member_id = #{member_id}
+    </update>
+    
+    <!-- 미승인 회원 아콘정보 삭제 -->
+    <delete id="deleteMemberAcon" parameterType="member">
+		 delete from acorn
+		 where member_id = #{member_id}
+    </delete>
+  
+    <!-- 미승인 회원 삭제 -->
+  	<delete id="deleteInformation" parameterType="member">
+	  	delete from members
+	  	where member_id = #{member_id}
+	  	and member_type = 'NONE'
+  	</delete>  
+  	
+ 	<!-- 회원 이메일 정보 확인 -->
+    <select id="checkMailState" parameterType="member" resultType="String">
+	    select member_id
+		from members
+		where member_email = #{member_email}
+		and member_auth = 'NORMAL'
+    </select>
+    
+   	<!-- 회원 이메일 인증을 통한 비밀번호 변경 -->
+    <update id="changePasswordEmailAuth" parameterType="member" >
+    	update members
+    	set member_password = #{member_password}
+    	where member_id = #{member_id}
+    </update>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao -->
+<mapper namespace="MainDAO">
+
+	<select id="mainRank" resultType="map">
+		select  down "down"
+				,b.board_no "board_no"
+				,b.member_id "member_id"
+				,b.board_title "board_title"
+				,sum_ac "sum_ac"
+				,ROW_number() over(order by	sum_ac desc,down desc) "rn"
+		from (select count(*) down,sum(download_acorn) sum_ac,group_no
+				from file_download
+				group by group_no) fd left join board b
+		  on fd.group_no = b.board_no
+	</select>
+	
+	<select id="mainSlide" resultType="map">
+	select board_img, board_no,member_id
+           				 from board                        
+                         <where>
+                         <if test="categoryBig != null and categoryBig !=''">
+                         category_big = #{categoryBig}
+                         </if>
+                         </where>
+                         <![CDATA[
+                         and rownum <=7
+                          ]]>
+                         order by board_no desc
+         
+	</select>
+
+</mapper>

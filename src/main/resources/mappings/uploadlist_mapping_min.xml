@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="uploadListMinDAO"> 
+ 
+ 	<!-- 업로드한 리스트 출력 + 검색 + 페이징-->
+	<select id="getuploadList" resultType="uploadlist" >
+	select a.* from ( select b.*, rownum rn from (select b.board_no,f.member_id,
+	 b.category_big,b.category_small,
+	b.board_title,f.file_name,round(f.file_storage ,2) as file_storage
+	from board b , file_upload f
+	where b.board_no = f.group_no
+	<if test="searchKeyword != null and searchKeyword !=''">
+				and b.member_id LIKE '%' || #{searchKeyword} || '%'
+	</if>
+	group by b.board_no,f.member_id, b.category_big, b.category_small, 
+	b.board_title, f.file_name,f.file_storage 
+	order by b.board_no desc) b) a 
+	where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 업로드한 리스트 카운트 -->
+	<select id="uploadListCount" resultType="int">
+	select count(*)
+	from board b , file_upload f
+	where b.board_no = f.group_no
+	<if test="searchKeyword != null and searchKeyword !=''">
+				and b.member_id LIKE '%' || #{searchKeyword} || '%'
+	</if>
+	</select>
+</mapper>

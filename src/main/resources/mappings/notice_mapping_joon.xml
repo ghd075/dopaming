@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao-->
+<mapper namespace="NoticeDAO"> 
+
+<!--공지사항 입력-->
+<insert id="notice_insert">
+    INSERT INTO notice(
+    					 	notice_no
+							,notice_title
+							,notice_content
+									)
+				VALUES (<!-- vo에 값들을 땡겨와 넘긴다 -->
+					notice_no_seq.nextval
+					,#{notice_title} 
+					,#{notice_content}
+					)
+</insert>
+
+<!-- 단건삭제 -->
+<delete id="notice_delete">
+	DELETE 
+	from notice
+	where notice_no = #{notice_no}
+</delete>
+
+<!--공지사항 단건 출력-->
+<select id="notice_select" resultType="notice_vo">
+select notice_no
+       ,notice_title
+       ,notice_content
+       ,notice_date
+from notice
+where notice_no= #{notice_no} 
+</select>
+   
+<!--공지사항 목록 출력-->
+<select id="notice_selectlist" resultType="notice_vo">
+ select a.* from ( select b.*, rownum rn from (
+ 				select notice_no
+                                    ,notice_title
+                                    ,notice_content
+                                    ,notice_date
+						 from notice order by notice_date desc
+ ) b ) a where rn between #{first} and #{last}
+</select>
+
+<!--페이징 -->
+<select id="notice_selectlist_cnt" resultType="int">
+		SELECT COUNT(*)
+		FROM notice
+</select>
+
+<!-- 공지사항 수정 -->
+<update id="notice_update">
+		update notice 
+		set notice_title = #{notice_title},
+			notice_content = #{notice_content} 
+		where notice_no = #{notice_no}
+</update>   
+</mapper>

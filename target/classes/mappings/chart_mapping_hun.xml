@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao -->
+<mapper namespace="chartDAO">
+
+
+	<select id="chartList" resultType="map">
+		select a.* from ( select c.*, rownum rn from(select count(*)
+		down_count,
+		m.upload_count,round(sum(m.upload_storage),2)
+		upload_storage,m.member_id,m.member_grade
+		from acorn a join members m
+		on a.member_id = m.member_id
+		<where>
+			<if test="searchKeyword != null and searchKeyword !=''">
+				m.member_id = #{searchKeyword}
+			</if>
+
+		</where>
+		group by m.upload_count,m.member_id,m.member_grade
+		) c) a where rn between #{first} and #{last}
+	</select>
+
+
+
+	<!--페이징 -->
+	<select id="chartList_cnt" resultType="int">
+		SELECT COUNT(*)
+		FROM
+		MEMBERS
+		<where>
+			<if test="searchKeyword != null and searchKeyword !=''">
+				MEMBER_ID LIKE '%' || #{searchKeyword} || '%'
+			</if>
+		</where>
+	</select>
+	
+	<!-- 차트(멤버등급 분포) 1 -->
+	<select id="chartMember" resultType="map">
+		select  g.grade_kor "grade_kor", count(m.member_grade) "cnt"
+		from members m join grade g
+        on m.member_grade= g.member_grade
+        group by g.grade_kor
+	</select>
+
+</mapper>

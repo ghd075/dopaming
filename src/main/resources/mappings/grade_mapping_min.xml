@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="GradeMinDAO"> 
+ 
+   <!-- 관리자 - 회원관리 - 등급관리 - 등급List  -->
+   <select id="classList" resultType="grade" >
+    select a.* from ( select b.*, rownum rn from (select m.member_id , 
+    		sum(a.acorn_charge) as acron,
+    		g.grade_kor , 
+    		m.upload_count,m.member_grade
+	from acorn a join members m
+	on a.member_id = m.member_id 
+	join grade g 
+	on m.member_grade = g.member_grade
+	where m.member_id != 'admin' and m.member_id != 'admin2' and m.member_id != 'admin3' 
+	<!-- 동적연산자가 있으면 자동으로 where가 붙는 방식 -->
+          <if test="member_grade != null and member_grade !=''"> 
+           and g.member_grade=#{member_grade}
+          </if>
+    
+	group by m.member_id, g.grade_kor, m.upload_count,m.member_grade
+	order by member_grade desc, m.member_id asc, acron desc) b) a 
+	where rn between #{first} and #{last}
+	</select>
+
+	<!-- 관리자 - 회원관리 - 등급관리 - 등급List - paging count -->
+	<select id="classListCount" resultType="int">
+	select count(distinct m.member_id)
+	from acorn a join members m
+	on a.member_id = m.member_id 
+	join grade g 
+	on m.member_grade = g.member_grade
+	where m.member_id != 'admin' and m.member_id != 'admin2' and m.member_id != 'admin3' 
+	 <!-- 동적연산자가 있으면 자동으로 where가 붙는 방식 -->
+          <if test="member_grade != null and member_grade !=''"> 
+          and g.member_grade=#{member_grade}
+          </if>
+    
+	
+	</select>
+	
+	<!-- 관리자 - 회원관리 - 등급관리 - 등급수정 -->
+	<update id="gradeupdate">
+		update  members
+		   set	MEMBER_GRADE = #{member_grade}
+		 where  member_id = #{member_id}
+	</update>
+</mapper>

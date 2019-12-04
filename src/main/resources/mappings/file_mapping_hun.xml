@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao -->
+<mapper namespace="fileDAO">
+
+	<!--파일영화 출력 -->
+	<select id="fileList" resultType="file">
+		select a.* from ( select c.*, rownum rn from(
+		select b.board_no,
+		b.board_img "boardImg"
+		,b.board_title   
+		,f.file_storage
+		,b.member_id
+		from (select round(sum(file_storage),2) file_storage,group_no
+       from file_upload
+       group by group_no) f join board b
+		on f.group_no = b.board_no
+		inner join members m on m.member_id=b.member_id
+		<where>
+			<if test="category_small != null and category_small !=''">
+				b.category_small = #{category_small}
+			</if>
+			<if test="category_big != null and category_big !=''">
+				and b.category_big = #{category_big}
+			</if>
+			<if test="searchKeyword != null and searchKeyword !=''">
+				and b.board_title LIKE '%' || #{searchKeyword} || '%'
+			</if>
+		</where>
+		order by b.board_no desc
+		) c) a where rn between #{first} and #{last}
+	</select>
+
+
+
+
+	<!--페이징 -->
+	<select id="fileList_cnt" resultType="int">
+		SELECT COUNT(*)
+		FROM
+		BOARD
+		<where>
+			<if test="category_small != null and category_small !=''">
+				category_small = #{category_small}
+			</if>
+			<if test="category_big != null and category_big !=''">
+				and category_big = #{category_big}
+			</if>
+			<if test="searchKeyword != null and searchKeyword !=''">
+				and board_title LIKE '%' || #{searchKeyword} || '%'
+			</if>
+		</where>
+	</select>
+</mapper>

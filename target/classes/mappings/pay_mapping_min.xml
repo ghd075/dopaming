@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PayDAO"> 
+	<!-- 결제충전 -->
+    <insert id="payInsert" parameterType="pay">
+    insert into acorn(acorn_no,member_id,acorn_charge,acorn_date,pay_code) 
+	values((select max(acorn_no)+1 from acorn),#{member_id},#{acorn_charge},sysdate,#{pay_code})
+    </insert>
+    
+    <!-- 결제했는사람 (아이디만)리스트 -->
+    <select id="payReturn" resultType="pay">
+    	select a.* from ( select b.*, rownum rn from (select DISTINCT member_id , to_char(acorn_date,'yy/mm/dd') acorn_date
+		from acorn  
+		where trunc(acorn_date) = trunc(sysdate) and pay_code = pay_code
+		group by member_id, acorn_date order by member_id) b) a where rn between #{first} and #{last}
+    </select>
+    
+    <!-- 결제했는사람 리스트 카운터 -->
+    <select id="payReturnCount" resultType="int">
+    select count(*)
+	from acorn 
+	where trunc(acorn_date) = trunc(sysdate) and pay_code = pay_code
+	</select>
+	
+    <!-- 결제했는 사람(단건)에 대한 세부내용(아이디,결제금액,충전날짜,결제고유코드) -->
+    <select id="datailpay" parameterType="pay" resultType="pay">
+    	select member_id,acorn_charge,acorn_date,pay_code 
+    	from acorn
+    	where trunc(acorn_date) = TRUNC(sysdate) 
+    	and pay_code=pay_code 
+    	<![CDATA[
+    	and acorn_charge <= (select acorn_stock from members where member_id = #{member_id} )
+    	]]>  
+    	 and member_id = #{member_id}
+    	order by acorn_date
+    </select>
+    <!-- 환불처리후 DB에서도 환불내용 삭제 -->
+    <delete id="deletepay" parameterType="pay">
+	    delete
+	    from acorn
+	    where pay_code = #{pay_code}
+    </delete>
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao-->
+<mapper namespace="BoardListDAO"> 
+   
+<!--게시판 목록 출력-->
+<select id="boardList_select" resultType="boardList_vo">
+ select a.* from ( select b.*, rownum rn from (
+ 				select board_no, board_title, category_big, category_small, member_id
+				from board
+				<where> <!-- 동적연산자가 있으면 자동으로 where가 붙는 방식 -->
+          			<if test="category_small != null and category_small !=''"> 
+           				category_small=#{category_small}
+          			</if>
+          			<if test="searchType =='member_id' and searchKeyword !=''">
+						and member_id LIKE '%' || #{searchKeyword} || '%'
+					</if>
+					<if test="searchType =='board_title' and searchKeyword !=''" >
+						and	board_title	LIKE '%' || #{searchKeyword} || '%'
+					</if>
+    			</where>
+				order by board_no desc
+ ) b) a where rn between #{first} and #{last}
+</select>
+
+<!--페이징 -->
+<select id="boardList_select_cnt" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		<where> <!-- 동적연산자가 있으면 자동으로 where가 붙는 방식 -->
+        	<if test="category_small != null and category_small !=''"> 
+        				category_small=#{category_small}
+          	</if>
+          	<if test="searchType =='member_id' and searchKeyword !=''">
+				and member_id LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType =='board_title' and searchKeyword !=''" >
+				and	board_title	LIKE '%' || #{searchKeyword} || '%'
+			</if>
+    	</where>
+</select>
+</mapper>

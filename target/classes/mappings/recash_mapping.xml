@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 환급 DAO 매핑 -->
+<mapper namespace="ReCashDAO">
+
+	<!-- 회원별 환급조회(관리자) 날자별 건 수  -->
+	<select id="recashCount_admin" resultType="int">
+		select count(*)
+		from recash
+		where to_char(reg_date, 'yyyy/mm/dd')=#{reg_date}
+	</select>
+
+	<!-- 환급신청 목록(관리자)_날짜별 -->
+	<select id="recashList_admin" resultType="recash">
+	select a.* from ( select b.*, rownum rn from (
+		select reg_no
+		       , member_id
+		       , bank
+		       , account_no
+		       , account_own
+		       , reg_recash 
+       		   , to_char(reg_date, 'yyyy/mm/dd hh24:mi:ss') as reg_date 
+               , nvl(to_char(recash_date, 'yyyy/mm/dd hh24:mi:ss'), 'N') as recash_date
+		from recash
+		where to_char(reg_date, 'yyyy/mm/dd')=#{reg_date}
+		order by 1 desc
+	) b ) a where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 환급금액 송금 -->
+	<update id="recashing">
+		update recash
+		set recash_date=sysdate
+		where recash_date is null and reg_date is not null
+	</update>
+	
+</mapper>

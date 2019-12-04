@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>		
+		<typeAlias type="com.dopaming.www.notice.NoticeVO" alias="notice_vo"/>
+		<typeAlias type="com.dopaming.www.admin.boardlist.BoardListVO" alias="boardList_vo"/>
+		<typeAlias type="com.dopaming.www.admin.complain.ComplainVO" alias="complain_vo"/>
+		<typeAlias type="com.dopaming.www.admin.complain.AnswerVO" alias="answer_vo"/>
+		<typeAlias type="com.dopaming.www.admin.chart.ChartVO" alias="chart"/>
+		<typeAlias type="com.dopaming.www.file.FileVO" alias="file"/>
+		<typeAlias type="com.dopaming.www.main.MainVO_hun" alias="main_vo"/>
+		<typeAlias type="com.dopaming.www.file.FileBoardVO_Hwan" alias="fileBoard_vo"/>
+		<typeAlias type="com.dopaming.www.file.FileUploadVO_Hwan" alias="fileUpload_vo"/>
+		<typeAlias type="com.dopaming.www.file.FileDownloadVO_Hwan" alias="fileDown_vo" />		
+		<typeAlias type="com.dopaming.www.admin.login.MembersVO_min" alias="members"/>
+		<typeAlias type="com.dopaming.www.admin.grade.GradeVO_min" alias="grade"/>
+		<typeAlias type="com.dopaming.www.admin.blacklist.BlackListVO" alias="blacklist"/>
+		<typeAlias type="com.dopaming.www.admin.file.uploadListVO_min" alias="uploadlist"/>
+		<typeAlias type="com.dopaming.www.pay.PayVO_min" alias="pay"/>
+		<typeAlias type="com.dopaming.www.login.MemberVO" alias="member"/>
+		<typeAlias type="com.dopaming.www.member.MyBoardVO" alias="myboard"/>
+		<typeAlias type="com.dopaming.www.member.FileUploadVO" alias="myupload"/>
+		<typeAlias type="com.dopaming.www.member.MyAcornVO" alias="myacorn"/>		
+		<typeAlias type="com.dopaming.www.msg.MsgVO" alias="msg"/>
+		<typeAlias type="com.dopaming.www.admin.recash.ReCashVO" alias="recash"/>
+	</typeAliases>
+
+</configuration>

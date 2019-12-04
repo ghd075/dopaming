@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BlackListMinDAO"> 
+ 
+ 	<!-- 블랙회원 출력 + 검색 + 페이징-->
+	<select id="getblackList" resultType="blacklist" >
+	select a.* from ( select b.*, rownum rn from (select m.member_id, m.member_email,m.member_date, l.list_date,l.list_content
+	from members m , black_list l 
+	where m.member_id = l.member_id 
+	<if test="searchKeyword != null and searchKeyword !=''">
+	AND m.member_id LIKE '%' || #{searchKeyword} || '%'
+	</if>
+	order by l.list_date desc) b) a 
+	where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 블랙회원 카운트 -->
+	<select id="blackListCount" resultType="int">
+	select count(*)
+	from members m , black_list l 
+	where m.member_id = l.member_id
+	</select>
+	
+	<!-- 블랙회원에서 삭제 -->
+	<delete id="blackListDelete">
+		delete 
+		from black_list
+		where member_id = #{member_id}
+	</delete>
+	
+	<!-- 일반회원 출력  -->
+	<select id="getnormalList" resultType="blacklist" >
+	select a.* from ( select b.*, rownum rn from (select m.member_id,m.member_email,m.member_date,
+	case member_grade when 'g4' then '다이아도토리'
+	when 'g3' then '골드도토리'
+	when 'g2' then '실버도토리'
+	when 'g0' then '관리자'
+	else '브론즈도토리'
+	end as "grade_kor"
+	from members m
+	where m.member_id != 'admin' and m.member_id != 'admin2' and m.member_id != 'admin3' and not exists(
+    select member_id
+	from black_list l
+    where l.member_id = m.member_id ) 
+    <if test="searchKeyword != null and searchKeyword !=''">
+	AND m.member_id LIKE '%' || #{searchKeyword} || '%'
+	</if>
+	order by 3 desc
+    ) b) a 
+    where rn between #{first} and #{last}
+    </select>
+    
+    <!-- 일반회원 카운트 -->
+    <select id="normalListCount" resultType="int">
+    select  count(*) from ( select b.*, rownum rn from (select *
+	from members m
+	where m.member_id != 'admin' and m.member_id != 'admin2' and m.member_id != 'admin3' and not exists(
+    select member_id
+	from black_list l
+    where l.member_id = m.member_id) 
+    ) b) a
+    </select>
+    
+    <!-- 일반회원에서 블랙으로 넘기기위한 단건조회 -->
+    <select id="getNormal" resultType="blacklist">
+    select a.* from ( select b.*, rownum rn from (select *
+	from members m
+	where not exists(
+    select member_id
+	from black_list l
+    where l.member_id = m.member_id) 
+    ) b) a 
+    where member_id=#{member_id}
+    </select>
+    
+    <!-- 일반->블랙 추가 -->
+    <insert id="normalInsert" parameterType="blacklist">
+    insert into black_list(member_id, list_content)
+    values (#{member_id},#{list_content})
+    
+    </insert>
+</mapper>

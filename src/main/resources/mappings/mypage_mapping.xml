@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- dumy_mapper.xml -->
+<mapper namespace="MyBoardDAO">
+	<!-- 내가 받은 자료 페이징 -->
+	<select id="getDownList" resultType="myboard">
+		select a.*
+		from ( select b.*, rownum rn
+		from (select distinct bo.board_no 
+		            , bo.board_title
+		            , bo.category_big
+		            , trunc(d.download_date) download_date
+		            , bo.member_id sal_id
+		from board bo 
+		inner join file_download d
+		on bo.board_no = d.group_no
+		where d.member_id = #{member_id}
+        order by bo.board_no desc) b) a
+		where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 내가 받은 자료 카운트 -->
+	<select id="getDownCount" resultType="int">
+		select count(distinct group_no) count
+	    from file_download
+	    where member_id = #{member_id}							
+	</select>
+	
+	<!-- 업로드관리 페이징 -->
+	<select id="getUploadList" resultType="myupload">
+		select a.* 
+		from ( select c.*, rownum rn 
+		from ( select b.board_no
+			,b.board_title
+	        ,b.category_big
+			,round(sum(f.file_storage),2) file_storage
+	        ,f.upload_date
+	        ,(select count(*) 
+			  from file_download d
+		      where d.group_no = b.board_no) down_count
+		from board b join file_upload f
+		on b.board_no = f.group_no
+		inner join members m on m.member_id=b.member_id
+        where m.member_id = #{member_id}
+        group by b.board_no
+        		, b.board_title
+        		, b.category_big
+        		, f.upload_date
+        order by b.board_no desc
+        ) c) a where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 업로드관리 카운트 -->
+	<select id="getUploadCount" resultType="int">
+        select count(distinct group_no)
+        from file_upload
+        where member_id = #{member_id}
+	</select>
+	
+	<!-- 게시글 삭제  -->
+	<delete id="deleteBoard">
+	delete 
+	from board
+	<where>
+		<choose>
+			<when test="seqs != null">
+				board_no in
+				<foreach item="t" collection="seqs" open="(" close=")" separator=",">
+					#{t}
+				</foreach>
+			</when>
+			<otherwise>
+				board_no = #{board_no}
+			</otherwise>
+		</choose>
+	</where> 
+	</delete>
+	
+	<!-- 업로드 파일 삭제 -->
+	<delete id="deleteUpload">
+	delete
+	from file_upload
+	<where>
+		<choose>
+			<when test="seqs != null">
+				group_no in
+				<foreach item="t" collection="seqs" open="(" close=")" separator=",">
+					#{t}
+				</foreach>
+			</when>
+			<otherwise>
+				group_no = #{board_no}
+			</otherwise>
+		</choose>
+	</where> 
+	</delete>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteComments">
+	delete
+	from comments
+	<where>
+		<choose>
+			<when test="seqs != null">
+				board_no in
+				<foreach item="t" collection="seqs" open="(" close=")" separator=",">
+					#{t}
+				</foreach>
+			</when>
+			<otherwise>
+				board_no = #{board_no}
+			</otherwise>
+		</choose>
+	</where>
+	</delete>
+	
+	<!-- 캐시사용내역 페이징 -->
+	<select id="getAcornList" resultType="myacorn">
+		select a.*
+		from ( select c.*, rownum rn
+		from ( select acorn_no
+		      , case when acorn_pay > 0 then acorn_pay
+		         else acorn_charge end acorn_point
+		      , acorn_content
+		      , acorn_date
+		from acorn
+		where member_id = #{member_id}
+		<if test="searchKeyword != null and searchKeyword !=''">
+			and acorn_content like '%'||#{searchKeyword}||'%'
+		</if>
+		order by acorn_no desc
+		) c) a where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 캐시사용내역 카운트 -->
+	<select id="getAcornCount" resultType="int">
+		select count(*)
+		from acorn
+		where member_id = #{member_id}
+		<if test="searchKeyword != null and searchKeyword !=''">
+			and acorn_content like '%'||#{searchKeyword}||'%'
+		</if>
+	</select>
+	
+	<!-- 내 캐시 조회 -->
+	<select id="getAcorn" resultType="int">
+		select acorn_stock
+		from members
+		where member_id = #{member_id}
+	</select>
+	
+	<!-- 캐시 내역 삭제 -->
+	<delete id="deleteAcorn">
+	delete 
+	from acorn
+	<where>
+		<choose>
+			<when test="seqs != null">
+				acorn_no in
+				<foreach item="t" collection="seqs" open="(" close=")" separator=",">
+					#{t}
+				</foreach>
+			</when>
+			<otherwise>
+				acorn_no = #{acorn_no}
+			</otherwise>
+		</choose>
+	</where>
+	</delete>
+	
+	<!-- 회원별 환급조회 전체 건 수  -->
+	<select id="recashCount" resultType="int">
+		select count(*)
+		from recash
+        where member_id = #{member_id}
+	</select>
+		
+	<!-- 환급조회 -->
+	<select id="recashList" resultType="recash">
+		select a.* 
+		from ( select b.*, rownum rn 
+		from ( select reg_no
+		       , bank
+		       , account_no
+		       , account_own
+		       , reg_recash
+		       , reg_date
+		       , nvl2(to_char(recash_date, 'yy/mm/dd'), 'Y', 'N') as state
+		from recash
+		where  member_id=#{member_id}
+		order by 1 desc ) b) a 
+		where rn between #{first} and #{last}
+	</select>
+	
+	<!-- 환급신청 번호 부여 -->
+	<select id="recashNo" resultType="int">
+		select max(reg_no) + 1
+		from recash
+	</select>
+	
+	<!-- 환급신청 -->
+	<insert id="recashIns">
+		insert into recash(reg_no, member_id, bank, account_no, account_own, reg_recash, reg_date)
+		values (#{reg_no}, #{member_id}, #{bank}, #{account_no}, #{account_own}, #{reg_recash}, sysdate)
+	</insert>
+
+</mapper>

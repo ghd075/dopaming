@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper = dao -->
+<mapper namespace="FileDAOHwan">
+
+	<!-- 파일 등록 -->
+	<insert id="file_insert_hwan">
+		<selectKey keyProperty="fileNo" resultType="int" order="BEFORE">
+			select FILE_UPLOAD_SEQ_HWAN.nextval from dual
+		</selectKey>
+		INSERT INTO file_upload(
+		file_no,
+		group_no,
+		member_id,
+		file_name,
+		file_storage,
+		upload_date
+		)values(
+		#{fileNo},
+		#{groupNo},
+		#{memberId},
+		#{fileName},
+		#{fileStorage},
+		SYSDATE
+		)
+	</insert>
+	<!-- 게시글 수정 -->
+	<update id="board_update_hwan">
+			update board
+				set board_title=#{boardTitle},
+				category_big=#{categoryBig},
+				category_small=#{categorySmall},
+				board_acorn=#{boardAcorn},
+				board_img=#{boardImg},
+				board_content=#{boardContent}
+				<where>
+					<if test="board_no!=null and board_no !='' ">
+					board_no=#{board_no}
+					</if>
+				</where>	
+	</update>
+	<!-- 게시글 수정 열람 -->
+	<select id="board_update_select_hwan" resultType="com.dopaming.www.file.FileBoardVO_Hwan">
+		select board_title, 
+		category_big, 
+		category_small, 
+		board_acorn, 
+		board_img, 
+		board_content 
+		from board
+		<where>
+			<if test="board_no!=null and board_no !='' ">
+			board_no=#{board_no}
+			</if>
+		</where>	
+	</select>
+
+	<!-- 게시글 등록 -->
+	<insert id="board_insert_hwan">
+		<selectKey keyProperty="boardNo" resultType="int"
+			order="BEFORE">
+			select BOARD_INSERT_SEQ_HWAN.nextval from dual
+		</selectKey>
+		INSERT INTO board(
+		board_no,
+		board_title,
+		member_id,
+		category_big,
+		category_small,
+		board_content,
+		board_img,
+		board_acorn
+		)values(
+		#{boardNo},
+		#{boardTitle},
+		#{memberId},
+		#{categoryBig},
+		#{categorySmall},
+		#{boardContent},
+		#{boardImg},
+		#{boardAcorn}
+		)
+	</insert>
+
+	<!-- 게시글 열람 -->
+	<select id="filePost_hwan"
+		resultType="com.dopaming.www.file.FilePostVO_Hwan">
+		select distinct b.board_no,
+		b.category_big,b.category_small,b.board_acorn,b.member_id,b.board_content,b.board_title
+		,b.board_img,sum(f.file_storage) as board_file_storage
+		from board b
+		inner join file_upload f
+		on board_no = group_no inner join members m
+		on
+		m.member_id =b.member_id
+		<where>
+			<if test="board_no!=null and board_no !='' ">
+				b.board_no=#{board_no}
+			</if>
+		</where>
+		group by b.board_no, b.category_big, b.category_small, b.board_acorn,
+		b.member_id, b.board_content,b.board_img,b.board_title
+
+	</select>
+
+	<!-- 게시글 파일리스트 -->
+	<select id="Board_FileList"
+		resultType="com.dopaming.www.file.FilePostVO_Hwan">
+		select f.file_name as fileName_List,
+		(select count(*) 
+		from file_download d
+		where d.file_no = f.file_no) down_count
+		from board b inner join file_upload
+		f
+		on b.board_no = f.group_no
+		<where>
+			<if test="board_no!=null and board_no!='' ">
+				board_no=#{board_no}
+			</if>
+		</where>
+	</select>
+
+	<!-- 게시글에 게시글 열람 -->
+	<select id="Board_BoardList"
+		resultType="com.dopaming.www.file.FilePostVO_Hwan">
+		select a.* from (select c.*, rownum rn from(
+		select distinct
+		b.board_no, b.board_title,
+		b.member_id,b.category_big,b.category_small
+		from board b inner join
+		file_upload f
+		on b.member_id = f.member_id
+		<where>
+			<if test="member_id!=null and member_id!='' ">
+				b.member_id=#{member_id}
+			</if>
+		</where>
+		) c ) a where rn between #{first} and #{last}
+	</select>
+
+	<!-- 게시글에 게시글 페이징 -->
+	<select id="Board_Paging" resultType="int">
+		select count(distinct b.board_no)
+		from board b inner join file_upload f
+		on b.member_id = f.member_id
+		<where>
+			<if test="member_id!=null and member_id!='' ">
+				b.member_id=#{member_id}
+			</if>
+		</where>
+	</select>
+	<!-- 다운로드 게시글 리스트 열람 -->
+	<select id="Download_List"
+		resultType="com.dopaming.www.file.FileDownloadVO_Hwan">
+		select distinct m.member_id,
+		f.file_no, f.group_no,
+		f.file_storage,f.file_name
+		from members m inner join file_upload f
+		on
+		m.member_id = f.member_id inner join board b
+		on m.member_id=b.member_id
+		<where>
+			<if test="group_no!=null and group_no!='' ">
+				group_no=#{group_no}
+			</if>
+		</where>
+	</select>
+	<!-- 다운로드 게시글 열람 -->
+	<select id="DownloadPost"
+		resultType="com.dopaming.www.file.FileDownloadVO_Hwan">
+		select distinct b.member_id, b.board_acorn,f.group_no
+		from board b
+		inner join file_upload f
+		on b.board_no = f.group_no
+		<where>
+			<if test="group_no!=null and group_no!='' ">
+				f.group_no=#{group_no}
+			</if>
+		</where>
+		group by b.member_id,b.board_acorn, f.file_no, f.group_no
+	</select>	
+	<!-- 다운로드 등록 -->
+   	<insert id="DownloadInsert">
+   		<selectKey keyProperty="download_no" resultType="int"
+			order="BEFORE">
+			select DOWNLOAD_INSERT_SEQ_HWAN.nextval from dual
+		</selectKey>
+   		INSERT INTO file_download(
+   			    download_no,
+    			download_date,
+    			member_id,
+    			download_acorn,
+    			file_no,
+    			group_no
+   		) VALUES(
+   			#{download_no},
+   			SYSDATE,
+   			#{member_id},
+   			#{download_acorn},
+   			#{file_no},
+   			#{group_no}
+   		)   	
+   	</insert>
+   	<!-- 다운로드 등록 유무 확인 -->
+   	<select id="DownloadCheck" resultType="int">
+   		select count(*) 
+		from file_download
+		<where>
+			<if test="group_no!=null and group_no!='' and member_id!=null and member_id!='' ">
+			 group_no=#{group_no}	
+			 and member_id=#{member_id}
+			 </if>
+   		</where>
+   	</select>
+   	<!-- 다운로드 등록 유무 확인2 -->
+   	<select id="DownloadCheck2" 
+   	resultType="com.dopaming.www.file.FileDownloadVO_Hwan">
+   		select distinct member_id
+			from file_download
+		<where>
+			<if test="group_no!=null and group_no!='' and member_id!=null and member_id!='' ">
+				group_no=#{group_no}
+				and member_id=#{member_id}
+			</if>
+		</where>   	
+   	</select>
+	<!-- 댓글 추가 -->
+	<insert id="CommentInsert">
+			<selectKey keyProperty="comment_no" resultType="int"
+			order="BEFORE">
+			select COMMENTS_INSERT_SEQ_HWAN.nextval from dual
+		</selectKey>
+	insert into comments(
+		comment_no,
+		comment_content,
+		member_id,
+		reg_date,
+		board_no
+	)values(
+		#{comment_no},
+		#{comment_content},
+		#{member_id},
+		SYSDATE,
+		#{board_no}
+	)	
+	</insert>
+	<!-- 댓글 단건 조회 -->
+	<select id="CommentSelectOne" resultType="com.dopaming.www.file.FileCommentsVO_Hwan">
+		select 
+			comment_no,
+			comment_content,
+			member_id,
+			reg_date,
+			board_no
+		from
+			comments
+		<where>
+			<if test="comment_no!=null and comment_no!='' ">
+				comment_no=#{comment_no}
+			</if>
+		</where>
+	</select>
+	<!-- 댓글 리스트 조회 -->
+	<select id="CommentSelectList" resultType="com.dopaming.www.file.FileCommentsVO_Hwan">
+			select 
+			comment_no,
+			comment_content,
+			member_id,
+			reg_date,
+			board_no
+		from
+			comments            
+        <where>
+        	<if test="board_no!=null and board_no!='' ">
+            	board_no=#{board_no}
+            </if>
+        </where>
+   	</select>   	
+</mapper>

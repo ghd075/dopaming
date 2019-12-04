@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper = dao-->
+<mapper namespace="ComplainDAO"> 
+
+<!--고객센터 등록-->
+<insert id="complain_insert">
+    INSERT INTO complain(
+    					 	complain_no,
+    					 	complain_type,
+							complain_title,
+							complain_content,
+							member_id
+						<if test="board_no != null and board_no !=''">	
+							,board_no
+						</if>
+									)
+				VALUES (<!-- vo에 값들을 땡겨와 넘긴다 -->
+					complain_seq.nextval
+					,#{complain_type} 
+					,#{complain_title}
+					,#{complain_content}
+					,#{member_id}
+					<if test="board_no != null and board_no !=''">
+					,#{board_no}
+					</if>
+					)
+</insert>
+
+<!--공지사항 단건 출력-->
+<select id="complain_select" resultType="complain_vo">
+select *
+from complain
+where complain_no= #{complain_no} 
+</select>
+   
+<!--고겍센터 리스트-->
+<select id="complain_selectlist" resultType="complain_vo">
+ 
+  select a.* from ( select b.*, rownum rn from ( 
+ 				
+ 				select * 
+				from complain
+				where complain_type = #{complain_type}
+		
+          	<if test="member_id != null and member_id !=''">
+				and member_id = #{member_id}
+			</if>
+				
+				order by complain_date desc
+				
+  ) b) a where rn between #{first} and #{last}
+</select>
+
+<!--페이징 -->
+<select id="complain_selectlist_cnt" resultType="int">
+		SELECT count(*)
+		FROM complain
+		where complain_type = #{complain_type}
+		<if test="member_id != null and member_id !=''">
+			and member_id = #{member_id}
+		</if>
+</select>
+
+<!-- 답변완료 -->
+<update id="complain_check_update">
+		update complain 
+		set complain_check = #{complain_check}
+		where complain_no = #{complain_no}
+		<if test="member_id != null and member_id !=''">
+				and member_id = #{member_id}
+		</if>
+</update>
+
+<!--답변 등록-->
+<insert id="answer_insert">
+    INSERT INTO message(
+    					 	message_no,
+    					 	sender_id,
+							message_title,
+							message_content,
+							receiver_id
+									)
+				VALUES (<!-- vo에 값들을 땡겨와 넘긴다 -->
+					complain_seq.nextval <!--message테이블 시퀀스 사용 -->
+					,'admin' 
+					,#{message_title}
+					,#{message_content}
+					,#{receiver_id}
+					)
+</insert>
+
+</mapper>
