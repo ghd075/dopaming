@@ -1,0 +1,364 @@
+src/main/java/com/dopaming/www/JoonController.java:35:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/main/java/com/dopaming/www/JoonController.java:35:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/main/java/com/dopaming/www/JoonController.java:38:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'BoardList_service' is not final.
+src/main/java/com/dopaming/www/JoonController.java:38:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'BoardList_service' is not final.
+src/main/java/com/dopaming/www/JoonController.java:38:	Variables should start with a lowercase character, 'BoardList_service' starts with uppercase character.
+src/main/java/com/dopaming/www/JoonController.java:38:	Variables should start with a lowercase character, 'BoardList_service' starts with uppercase character.
+src/main/java/com/dopaming/www/JoonController.java:39:	Variables should start with a lowercase character, 'ComplainService' starts with uppercase character.
+src/main/java/com/dopaming/www/JoonController.java:39:	Variables should start with a lowercase character, 'ComplainService' starts with uppercase character.
+src/main/java/com/dopaming/www/JoonController.java:43:	The instance method name 'notice_insert_form' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:43:	The instance method name 'notice_insert_form' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:49:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:49:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:49:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:49:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:71:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:71:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:71:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:71:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:94:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:94:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:94:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:94:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:106:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:106:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:106:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:106:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:113:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:113:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:113:	The instance method name 'notice_deletelist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:113:	The instance method name 'notice_deletelist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:115:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'td_checkbox' is not final.
+src/main/java/com/dopaming/www/JoonController.java:115:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'td_checkbox' is not final.
+src/main/java/com/dopaming/www/JoonController.java:131:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:131:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:131:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:131:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:141:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:141:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:141:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:141:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:144:	System.out.println is used
+src/main/java/com/dopaming/www/JoonController.java:144:	System.out.println is used
+src/main/java/com/dopaming/www/JoonController.java:163:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:163:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:187:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:187:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:187:	The instance method name 'complain_insert_form' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:187:	The instance method name 'complain_insert_form' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:193:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:193:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:193:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:193:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:208:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:208:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:208:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:208:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:233:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:233:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:233:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:233:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:247:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:247:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/JoonController.java:247:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/JoonController.java:247:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:18:	The instance method name 'boardList_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:18:	The instance method name 'boardList_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:19:	System.out.println is used
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:19:	System.out.println is used
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:25:	The instance method name 'boardList_select_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListDAOMybatis.java:25:	The instance method name 'boardList_select_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:10:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:10:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:10:	The instance method name 'boardList_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:10:	The instance method name 'boardList_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:13:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:13:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:13:	The instance method name 'boardList_select_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListService.java:13:	The instance method name 'boardList_select_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListServiceImpl.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListServiceImpl.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListServiceImpl.java:26:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListServiceImpl.java:26:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_title' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_title' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_big' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_big' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_small' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_small' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_acorn' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_acorn' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:13:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:13:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:32:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:32:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:36:	The instance method name 'getBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:36:	The instance method name 'getBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:39:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:39:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:39:	The instance method name 'setBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:39:	The instance method name 'setBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:42:	The instance method name 'getMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:42:	The instance method name 'getMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:45:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:45:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:45:	The instance method name 'setMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:45:	The instance method name 'setMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:48:	The instance method name 'getBoard_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:48:	The instance method name 'getBoard_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:51:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_title' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:51:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_title' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:51:	The instance method name 'setBoard_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:51:	The instance method name 'setBoard_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:54:	The instance method name 'getCategory_big' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:54:	The instance method name 'getCategory_big' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:57:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_big' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:57:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_big' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:57:	The instance method name 'setCategory_big' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:57:	The instance method name 'setCategory_big' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:60:	The instance method name 'getCategory_small' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:60:	The instance method name 'getCategory_small' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:63:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_small' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:63:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'category_small' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:63:	The instance method name 'setCategory_small' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:63:	The instance method name 'setCategory_small' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:66:	The instance method name 'getBoard_acorn' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:66:	The instance method name 'getBoard_acorn' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:69:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_acorn' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:69:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_acorn' is not final.
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:69:	The instance method name 'setBoard_acorn' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/boardlist/BoardListVO.java:69:	The instance method name 'setBoard_acorn' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:20:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:20:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:20:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:20:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:21:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:21:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:27:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:27:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:27:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:27:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:28:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:28:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:34:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:34:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:34:	The instance method name 'complain_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:34:	The instance method name 'complain_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:39:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:39:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:39:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:39:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:40:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:40:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:46:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:46:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:46:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:46:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:47:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainDAOMybatis.java:47:	System.out.println is used
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:12:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:12:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:12:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:12:	The instance method name 'complain_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:15:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:15:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:15:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:15:	The instance method name 'complain_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:18:	The instance method name 'complain_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:18:	The instance method name 'complain_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:21:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:21:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:21:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:21:	The instance method name 'complain_check_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:24:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:24:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:24:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainService.java:24:	The instance method name 'complain_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:20:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:20:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:28:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:28:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:35:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:35:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:41:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:41:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:48:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainServiceImpl.java:48:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_type' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_type' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_title' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_title' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_content' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_content' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:11:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_date' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:11:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_date' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:12:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_check' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:12:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_check' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:14:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:14:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:16:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:16:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:36:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:36:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:39:	The instance method name 'getComplain_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:39:	The instance method name 'getComplain_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:42:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:42:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:42:	The instance method name 'setComplain_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:42:	The instance method name 'setComplain_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:45:	The instance method name 'getComplain_type' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:45:	The instance method name 'getComplain_type' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:48:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_type' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:48:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_type' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:48:	The instance method name 'setComplain_type' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:48:	The instance method name 'setComplain_type' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:51:	The instance method name 'getComplain_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:51:	The instance method name 'getComplain_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:54:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_title' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:54:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_title' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:54:	The instance method name 'setComplain_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:54:	The instance method name 'setComplain_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:57:	The instance method name 'getComplain_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:57:	The instance method name 'getComplain_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:60:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_content' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:60:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_content' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:60:	The instance method name 'setComplain_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:60:	The instance method name 'setComplain_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:63:	The instance method name 'getComplain_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:63:	The instance method name 'getComplain_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:66:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_date' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:66:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_date' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:66:	The instance method name 'setComplain_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:66:	The instance method name 'setComplain_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:69:	The instance method name 'getComplain_check' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:69:	The instance method name 'getComplain_check' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:72:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_check' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:72:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'complain_check' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:72:	The instance method name 'setComplain_check' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:72:	The instance method name 'setComplain_check' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:75:	The instance method name 'getMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:75:	The instance method name 'getMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:78:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:78:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'member_id' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:78:	The instance method name 'setMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:78:	The instance method name 'setMember_id' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:81:	The instance method name 'getBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:81:	The instance method name 'getBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:84:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:84:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'board_no' is not final.
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:84:	The instance method name 'setBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/admin/complain/ComplainVO.java:84:	The instance method name 'setBoard_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:18:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:18:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:18:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:19:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:19:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:25:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:25:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:26:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:26:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:32:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:32:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:32:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:32:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:33:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:33:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:38:	The instance method name 'notice_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:38:	The instance method name 'notice_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:43:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:43:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:43:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:43:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:44:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:44:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:50:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:50:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:50:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:50:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:51:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeDAOMybatis.java:51:	System.out.println is used
+src/main/java/com/dopaming/www/notice/NoticeService.java:10:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:10:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:10:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:10:	The instance method name 'notice_insert' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:13:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:13:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:13:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:13:	The instance method name 'notice_select' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:16:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:16:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:16:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:16:	The instance method name 'notice_selectlist' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:19:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:19:	The instance method name 'notice_delete' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:22:	The instance method name 'notice_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:22:	The instance method name 'notice_selectlist_cnt' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:25:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeService.java:25:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeService.java:25:	The instance method name 'notice_update' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:19:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:27:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:27:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:33:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:33:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:39:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:39:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:51:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeServiceImpl.java:51:	Avoid variables with short names like vo
+src/main/java/com/dopaming/www/notice/NoticeVO.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_no' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_no' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_title' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_title' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_content' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_content' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_date' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_date' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:10:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/notice/NoticeVO.java:10:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/notice/NoticeVO.java:31:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/notice/NoticeVO.java:31:	Avoid variables with short names like rn
+src/main/java/com/dopaming/www/notice/NoticeVO.java:34:	The instance method name 'getNotice_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:34:	The instance method name 'getNotice_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:37:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_no' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:37:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_no' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:37:	The instance method name 'setNotice_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:37:	The instance method name 'setNotice_no' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:40:	The instance method name 'getNotice_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:40:	The instance method name 'getNotice_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:43:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_title' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:43:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_title' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:43:	The instance method name 'setNotice_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:43:	The instance method name 'setNotice_title' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:46:	The instance method name 'getNotice_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:46:	The instance method name 'getNotice_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:49:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_content' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:49:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_content' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:49:	The instance method name 'setNotice_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:49:	The instance method name 'setNotice_content' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:52:	The instance method name 'getNotice_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:52:	The instance method name 'getNotice_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:55:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_date' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:55:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'notice_date' is not final.
+src/main/java/com/dopaming/www/notice/NoticeVO.java:55:	The instance method name 'setNotice_date' doesn't match '[a-z][a-zA-Z0-9]*'
+src/main/java/com/dopaming/www/notice/NoticeVO.java:55:	The instance method name 'setNotice_date' doesn't match '[a-z][a-zA-Z0-9]*'

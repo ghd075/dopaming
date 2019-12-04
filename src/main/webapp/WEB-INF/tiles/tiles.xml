@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration
+2.1//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="mainTemplate"
+		template="/WEB-INF/views/tiles/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/tiles/content.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+		<put-attribute name="msg" value="/WEB-INF/views/ho/msg.jsp"/>
+	</definition>	
+	
+	<definition name="adminTemplate"
+		template="/WEB-INF/views/admin_tiles/admin_t/layout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/views/admin_tiles/admin_t/header.jsp" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin_tiles/admin_t/content.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/admin_tiles/admin_t/footer.jsp" />		
+	</definition>
+	
+    <!-- 마이페이지 -->
+    <definition name="side" template="/WEB-INF/views/tiles/side_template.jsp">
+    	<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="left_side" value="/WEB-INF/views/tiles/left_side.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+    	<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+    	<put-attribute name="msg" value="/WEB-INF/views/ho/msg.jsp"/>
+    </definition>
+    
+    <definition name="mypage_hong/*" extends="side">
+        <put-attribute name="content" value="/WEB-INF/views/mypage_hong/{1}.jsp" />
+    </definition>
+    
+    <!-- 마이페이지(타일제거) -->
+    <definition name="mypage_hong/empty/*" template="/WEB-INF/views/tiles/layoutEmpty.jsp">
+        <put-attribute name="content" value="/WEB-INF/views/mypage_hong/{1}.jsp" />
+    </definition>
+
+<!-- 메인 공지사항 리스트 joon -->
+	<definition name="jon/notice_selectlist*" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/notice_selectlist_joon_nomal.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>
+	
+<!-- 메인 공지사항 뷰 joon -->
+	<definition name="jon/notice_select_joon*" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/notice_select_joon_nomal.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>
+		
+<!-- 메인 고객센터 리스트 joon -->
+	<definition name="jon/complain_selectlist*" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/complain_selectlist_joon_nomal.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>
+
+<!-- 메인 고객센터 뷰 joon -->
+	<definition name="jon/complain_select*" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/complain_select_joon_nomal.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>
+
+<!-- 메인 고객센터 글쓰기 joon -->
+	<definition name="jon/complain_insert*" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/complain_insert_joon.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>	
+
+<!-- 메인 공지사항 뷰(고객센터) joon -->
+	<definition name="jon/notice_select_new" template="/WEB-INF/views/tiles/side1.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/joon/notice_select_new_joon.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+		<put-attribute name="modal" value="/WEB-INF/views/hong/modal.jsp"/>
+	</definition>	
+	
+	<definition name="home" extends="mainTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/views/home.jsp" />
+	</definition>
+<!-- 	<definition name="main" extends="mainTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/views/main.jsp" />
+	</definition> -->
+	
+	<!--empty --> <!-- 타일즈안쓰려면 empty를 적으면 됨 / minController 로그인처리 부분 참고 -->
+	<definition name="*/*.empty" template="/WEB-INF/views/admin_tiles/admin_t/layoutEmpty.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/admin_tiles/{1}/{2}.jsp" />
+	</definition>
+	
+	
+	<!-- 타일즈필요없는 관리자로그인 -->
+	<definition name="admin/*/*.empty" template="/WEB-INF/views/admin_tiles/admin_t/layoutEmpty.jsp">
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin_tiles/admin/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- 유저타일즈 -->
+	<definition name="*/*" extends="mainTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- 관리자타일즈 -->
+	<definition name="admin/*/*" extends="adminTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin_tiles/admin/{1}/{2}.jsp" />
+	</definition>
+	
+</tiles-definitions>

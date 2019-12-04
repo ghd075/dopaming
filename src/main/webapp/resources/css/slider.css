@@ -1,0 +1,255 @@
+/*
+**    모달창 : 회원 로그인
+*/
+
+.modal-margin {
+    margin-left: 40%;
+}
+
+.loginmodal_warp {
+    top: 20%;
+}
+
+.loginmodal_body {
+    text-align: center;
+}
+
+.loginmodal_image {
+    margin: 5% 0 3% 6%;
+    width: 146px;
+    height: 146px;
+}
+
+.loginmodal_title {
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 2% 0;
+}
+
+.loginmodal_loginid,
+.loginmodal_loginpass {
+    width: 90%;
+    height: 30px;
+    padding: 1.5% 3%;
+    text-align: center;
+    padding-left: 8%;
+    border-radius: 20px;
+    margin-bottom: 4%;
+    border: 3px solid #fff;
+    background-color: #00ffff;
+    color: #000;
+    font-weight: bold;
+    display: table-cell;
+}
+
+.loginmodal_loginid:focus,
+.loginmodal_loginpass:focus {
+	 border: 3px solid #00ffff;
+	 background-color: #fff;
+	 outline: none;	
+}
+
+.modal-loginbtn {
+    width: 90%;
+    padding: 3%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+    background-color: #3c578e;
+}
+
+.modal-loginbtn:hover {
+    color: #fff;
+    background-color: #213c6f;
+    border-color: #213c6f;
+}
+
+
+.loginmodal_resize {
+    width: 80%;
+}
+
+
+/*
+**    소셜로그인
+*/
+
+.content_socialicon {
+    width: 15%;
+    margin-left: 4%;
+    cursor: pointer;
+    vertical-align: bottom;
+}
+
+/*
+**    모달창 : 회원가입
+*/
+.modal-input {
+    letter-spacing: 2px !important;
+    padding-left: 18px !important;
+    font-weight: bold !important;
+}
+
+.joinmodal_warp {
+    top: 20%;
+}
+
+.joinmodal_body {
+    text-align: center;
+}
+
+.joinmodal_title {
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding: 2% 0;
+}
+
+.joinmodal_joinid,
+.joinmodal_joinpass,
+.joinmodal_joinemail {
+    width: 90%;
+    height: 30px;
+    padding: 1.5% 3%;
+    text-align: center;
+    padding-left: 8%;
+    border-radius: 20px;
+    margin-bottom: 4%;
+    border: 3px solid #fff;
+    background-color: #00ffff;
+    color: #000;
+    font-weight: bold;
+    display: table-cell;
+}
+
+.joinmodal_joinid:focus,
+.joinmodal_joinpass:focus,
+.joinmodal_joinemail:focus {
+	 border: 3px solid #00ffff;
+	 background-color: #fff;
+	 outline: none;	
+}
+
+.modal-joinbtn {
+    width: 70%;
+    height: 55px;
+    padding: 3%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5%;    
+}
+
+.joinmodal_resize {
+    width: 80%;
+}
+
+.validation_final {
+    width: 80px;
+    height: 55px;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: -5%;
+    padding-top: 3%;
+    font-weight: bold;
+}
+
+/* 
+**	로그인 상태 체크 form
+*/
+
+.form-check {
+	margin-left: 5%;
+	padding: 15px;
+	text-align: left;
+}
+
+.form-check label {
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 5px;
+	font-size: 15px;
+	color: #606060;
+	font-size: 14px;
+}
+
+.forgot-password {
+	text-align: right;
+	float: right;
+	font-weight: bold;
+}
+
+.forgot-password a {
+	color: #00B72E;
+	opacity: 0.6;
+}
+
+.forgot-password a:hover {
+	opacity: 1;
+}
+
+
+/* Switch styles */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F0F0F0;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00B72E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px ##00B72E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+/* 
+**	모달창 : 미인증 회원 창
+*/
+.modal-resendtext {
+    font-weight: bold;
+}
+.modal-resendpoint {
+    color: #d75a4a;
+}
+.modal-loginbtn, .modal-joinbtn {
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+}
